@@ -1,0 +1,28 @@
+How to install and run (GNU/Linux and Mac)
+1. Install git,python3, pip3, virtualenv in your operating system
+2. Create a development environment ready by using these commands
+
+--------------------
+git clone https://github.com/mavenium/PyEditorial		# clone the project
+cd PyEditorial		                                        # go to the project DIR
+virtualenv -p python3 .venv		                        # Create virtualenv named .venv
+source .venv/bin/activate		                        # Active virtualenv named .venv
+pip install -r requirements.txt		                        # Install project requirements in .venv
+python manage.py makemigrations		                        # Create migrations files
+python manage.py migrate		                        # Create database tables
+python manage.py collectstatic		                        # Create statics files
+python manage.py runserver		                        # Run the project
+-----------
+
+3. Go to http://127.0.0.1:8000/ to use project
+
+
+>테이블 생성 불가일 때
+python manage.py makemigrations
+python manage.py migrate --run-syncdb
+설명 : --run-syncdb은 마이그레이션하지 않고 앱에 대한 테이블을 만드는 것이다.
+
+
+[참고 URL]
+https://github.com/mavenium/PyEditorial
+https://healthdevelop.tistory.com/entry/Python-djangodbutilsOperationalError-no-such-table-usersuser-%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0-2
